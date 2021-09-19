@@ -34,14 +34,14 @@ const generateTaskCard = ({id,url,title,type,description})=>{
                 <span class="badge bg-primary">${type}</span>
             </div>
             <div class="card-footer">
-                <button class="btn btn-outline-primary float-end">OPEN TASK</button>
+                <button class="btn btn-outline-primary float-end" name=${id}>OPEN TASK</button>
             </div>
         </div>
     </div>`)
 }
 
 const saveToLocalStorage = ()=>{
-    localStorage.setItem("Tasky",JSON.stringify({tasks: globaltaskdata}))
+    localStorage.setItem("Tasky",JSON.stringify({tasks: globaltaskdata}))///in this form.
 }
 
 const reloadTaskCard = ()=>{
@@ -56,31 +56,56 @@ const reloadTaskCard = ()=>{
 
 const deleteTask = (e)=> {
 const targetID = e.getAttribute("name")
-const removeTask = globaltaskdata.filter((card)=>card.id!==targetID)
+const removeTask = globaltaskdata.filter((card)=>{
+    if (card.id != targetID){
+        return card
+    }    
+})
 globaltaskdata = removeTask
 saveToLocalStorage()
 window.location.reload()
 }
-
+//Cleared
 
 const editTask = (e) => {
     const targetID = e.getAttribute("name");
-    console.log(e)
-    console.log(e.parentNode)
-    console.log(e.parentNode.parentNode.parentNode.childNodes)
+    // console.log(e)
+    // console.log(e.parentNode)
+    // console.log(e.parentNode.parentNode)
+    // console.log(e.parentNode.parentNode.parentNode)
+    // console.log(e.parentNode.parentNode.parentNode.childNodes)
     // console.log(e.parentNode.parentNode.parentNode.childNodes[5].childNodes[1])
     // console.log(e.parentNode.parentNode.parentNode.childNodes[5].childNodes[3])
-    // console.log(e.parentNode.parentNode.parentNode.childNodes[5].childNodes[5])
+    // console.log(e.parentNode.parentNode.parentNode.childNodes[1].childNodes[1].style = "display : none")
+    e.style = "display: None"
     e.parentNode.parentNode.parentNode.childNodes[5].childNodes[1].setAttribute("contenteditable","true")
     e.parentNode.parentNode.parentNode.childNodes[5].childNodes[3].setAttribute("contenteditable","true")
     e.parentNode.parentNode.parentNode.childNodes[5].childNodes[5].setAttribute("contenteditable","true")
     e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].innerHTML = "SAVE CAHNGES"
     e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].setAttribute("onclick","savedEditTask(this)")
-    e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].style.setProperty("background","red")
+    // e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].style.setProperty("background","red")
+    e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].style = "background : red"
     e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].style.setProperty("border","3px solid black")
-    saveToLocalStorage();
-    // window.location.reload();
 }
 const savedEditTask = (e) =>{
-
+    e.innerHTML="OPEN TASK"
+    e.style.color="green"
+    e.style.background = "transparent"
+    e.style.border = "solid 2px green"
+    e.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].style = "display : visible"
+    const title = e.parentNode.parentNode.childNodes[5].childNodes[1].innerHTML
+    const desc = e.parentNode.parentNode.childNodes[5].childNodes[3].innerHTML
+    const type = e.parentNode.parentNode.childNodes[5].childNodes[5].innerHTML
+    const targetiD = e.getAttribute("name")
+    let Ftarget = globaltaskdata.filter((card)=>{
+            if(card.id == targetiD){
+               card.title = title
+               card.description = desc
+               card.type = type 
+            }
+            return card
+    })
+    console.log(Ftarget)
+    globaltaskdata = Ftarget
+    saveToLocalStorage()
 }
