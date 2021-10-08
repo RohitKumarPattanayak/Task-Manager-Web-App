@@ -109,3 +109,12 @@ const savedEditTask = (e) =>{
     globaltaskdata = Ftarget
     saveToLocalStorage()
 }
+
+const searchFilter =(e) => {
+    const Stitle = e.parentNode.childNodes[1].value
+    const searched = globaltaskdata.filter((e)=>{
+        if(e.title===Stitle)
+            return e.id
+    })
+
+}

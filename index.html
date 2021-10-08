@@ -42,21 +42,25 @@
             </div>
         </div>
     </div>
-
-    
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light border border-5 ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand ms-sm-3" href="#"><b>TASKY</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                      <a class="nav-link" href="#"><strong>Home</strong></a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-75 ms-5 ms-md-0 mt-md-2">
+                    <li class="nav-item w-100 ">
+                        <div class="input-group mb-3 mt-3 ms-3">
+                            <input id="searchele" type="text" class="form-control" placeholder="Search by title" aria-label="Username" aria-describedby="basic-addon1">
+                            <button onclick="searchFilter(this)" id="search" type="button" class="btn btn-outline-primary"><i class="fas fa-search"></i></button>
+                          </div>
                     </li>
                 </ul>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newcardmodal">
+                <div class="form-check form-switch bg-dark rounded-pill me-1 border border-5" style="max-width: 37px;max-height: 40px;">
+                        <input class="form-check-input bg-secondary opacity-100 border border-5 border-dark" type="checkbox" id="flexSwitchCheckDefault">
+                </div>
+                <button class="btn btn-primary rounded-pill border border-5 mt-2" data-bs-toggle="modal" data-bs-target="#newcardmodal">
                     <i class="fas fa-plus"></i>ADD NEW
                 </button>
             </div>
