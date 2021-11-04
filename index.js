@@ -27,7 +27,7 @@ const generateTaskCard = ({id,url,title,type,description})=>{
                     </button>
                 </div>
             </div>
-            <img style=" max-height:400px"class="shadow-lg" style="margin: 10px;border-radius: 20px" src=${url} class="card-ing-top" alt="image">
+            <img style=" max-height:300px"class="shadow-lg" style="margin: 10px;border-radius: 20px" src=${url} class="card-ing-top" alt="image">
             <div class="card-body" style="text-align: center">
                 <h3 class="card-title" style="color : yellow";> TITLE : ${title}</h3>
                 <p class="card-text">${description}</p>        
