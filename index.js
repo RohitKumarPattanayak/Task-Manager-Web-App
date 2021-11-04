@@ -18,7 +18,6 @@ const generateTaskCard = ({id,url,title,type,description})=>{
     return (`<div class="col-md-6 col-lg-4 mt-3 rounded-pill" id=${id} key=${id}>
         <div class="card bg-dark " style="color: white; border: solid 1px white;border-radius: 15px">
             <div class="card-header" style="background-color: black;border-radius: 15px">
-            <h3 style="display:inline">TASKS</h3>    
             <div class="d-flex justify-content-end">
                     <button type="button" class="btn btn-outline-info" name=${id} onclick="editTask(this)">
                         <i class="fas fa-pencil-alt"></i>
