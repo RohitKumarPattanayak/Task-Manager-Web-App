@@ -29,7 +29,7 @@ const generateTaskCard = ({id,url,title,type,description})=>{
             </div>
             <img style=" max-height:200px"class="shadow-lg" style="margin: 10px;border-radius: 20px" src=${url} class="card-ing-top" alt="image">
             <div class="card-body" style="text-align: center">
-                <h3 class="card-title" style="color : yellow";> TITLE : ${title}</h3>
+                <h3 class="card-title" style="color : yellow";>${title}</h3>
                 <p class="card-text">${description}</p>        
                 <span class="badge bg-primary">${type}</span>
             </div>
