@@ -7,6 +7,9 @@
     .rohit {
       display: none;
     }
+    .rohit2 {
+      display: none;
+    }
     .headline{
       margin: 20px;
     }
@@ -28,3 +31,67 @@
     border: none;
   }
 
+  div.card1{
+    width: 16rem;
+    height: 250px;
+    margin: auto 12px;
+    border-radius: 20px; 
+    transition: width 1s, height 1s, border-radius 1s, transform 1s;
+}
+div.card1:hover {
+    height: 300px;
+    width: 19rem;
+    border-radius: 22px;
+    border: 2px solid white;
+    /* transform:  scale(400px); */
+}
+
+.description{
+  width: 90%;
+}
+
+.description > h1{
+  font-weight: 800;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: inherit;
+  color: lightgrey;
+  font-size: 250%;
+  text-transform: uppercase;
+}
+
+.description p span > a{
+  text-decoration: none;
+  color: lightblue;
+}
+
+.description > p{
+  font-size: 110%;
+  font-family: cursive;
+  color: antiquewhite;
+}
+
+div.accordion-body > ul{
+  text-align: start;
+  color: beige;
+  font-family: cursive;
+}
+button.accordion-button > h4{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: normal;
+  font-size: 150%;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+button.accordion-button{
+  background-color: grey;
+  border-color: black;
+}
+
+div.accordion-body{
+  background-color: grey;
+}
+
+button#main{
+  margin: 30px;
+}
