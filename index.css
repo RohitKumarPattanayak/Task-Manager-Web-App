@@ -44,7 +44,8 @@ div.card1:hover {
   font-weight: 500; 
   border: white solid 2px;
   padding: 5px;margin: 20px;
-  width: 90%;border-radius: 10px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 90%;border-radius: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 700;color: blanchedalmond;
   font-size: 190%;
   box-shadow: inset 0 .5em 1.5em rgba(255, 252, 252, 0.1), inset 0 .125em .5em rgba(108, 91, 91, 0.15);
@@ -72,14 +73,14 @@ div.card1:hover {
 
 .description > p{
   font-size: 110%;
-  font-family: cursive;
+  /* font-family: cursive; */
   color: antiquewhite;
 }
 
 div.accordion-body > ul{
   text-align: start;
   color: beige;
-  font-family: cursive;
+  /* font-family: cursive; */
 }
 button.accordion-button > h4{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
