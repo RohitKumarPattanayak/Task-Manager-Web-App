@@ -88,11 +88,15 @@ const editTask = (e) => {
     e.parentNode.parentNode.parentNode.childNodes[7].childNodes[1].style.setProperty("border","3px solid black")
 }
 const savedEditTask = (e) =>{
+    e.parentNode.parentNode.childNodes[5].childNodes[1].setAttribute("contenteditable","false")
+    e.parentNode.parentNode.childNodes[5].childNodes[3].setAttribute("contenteditable","false")
+    e.parentNode.parentNode.childNodes[5].childNodes[5].setAttribute("contenteditable","false")
     e.innerHTML="OPEN TASK"
     e.style.color="green"
     e.style.background = "transparent"
     e.style.border = "solid 2px green"
     e.parentNode.parentNode.childNodes[1].childNodes[1].childNodes[1].style = "display : visible"
+
     const title = e.parentNode.parentNode.childNodes[5].childNodes[1].innerHTML
     const desc = e.parentNode.parentNode.childNodes[5].childNodes[3].innerHTML
     const type = e.parentNode.parentNode.childNodes[5].childNodes[5].innerHTML
